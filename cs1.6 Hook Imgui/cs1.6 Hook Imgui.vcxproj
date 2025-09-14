@@ -19,8 +19,14 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\Relic\ZeroFlick\utils\CUserCMD.h" />
+    <ClInclude Include="gui.h" />
     <ClInclude Include="ImGui\imconfig.h" />
     <ClInclude Include="ImGui\imgui.h" />
+    <ClInclude Include="ImGui\imgui_impl_opengl2.h" />
+    <ClInclude Include="ImGui\imgui_impl_opengl3.h" />
+    <ClInclude Include="ImGui\imgui_impl_opengl3_loader.h" />
+    <ClInclude Include="ImGui\imgui_impl_win32.h" />
     <ClInclude Include="ImGui\imgui_internal.h" />
     <ClInclude Include="ImGui\imstb_rectpack.h" />
     <ClInclude Include="ImGui\imstb_textedit.h" />
@@ -28,10 +34,15 @@
     <ClInclude Include="MinHook_x86\include\MinHook.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="gui.cpp" />
     <ClCompile Include="ImGui\imgui.cpp" />
     <ClCompile Include="ImGui\imgui_draw.cpp" />
+    <ClCompile Include="ImGui\imgui_impl_opengl2.cpp" />
+    <ClCompile Include="ImGui\imgui_impl_opengl3.cpp" />
+    <ClCompile Include="ImGui\imgui_impl_win32.cpp" />
     <ClCompile Include="ImGui\imgui_tables.cpp" />
     <ClCompile Include="ImGui\imgui_widgets.cpp" />
+    <ClCompile Include="dllmain.cpp.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Library Include="MinHook_x86\lib\libMinHook.x64.lib" />
@@ -98,7 +109,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpplatest</LanguageStandard>
-      <AdditionalIncludeDirectories>C:\Users\Administrator\Desktop\DOme\cs1.6 Hook Imgui\cs1.6 Hook Imgui\ImGui;C:\Users\Administrator\Desktop\DOme\cs1.6 Hook Imgui\cs1.6 Hook Imgui\MinHook_x86\include;C:\Users\Administrator\Desktop\DOme\cs1.6 Hook Imgui\cs1.6 Hook Imgui\MinHook_x86\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Administrator\Desktop\DOme\cs1.6 Hook Imgui\cs1.6 Hook Imgui\ImGui;C:\Users\Administrator\Desktop\DOme\cs1.6 Hook Imgui\cs1.6 Hook Imgui\MinHook_x86\include;C:\Users\Administrator\Desktop\DOme\cs1.6 Hook Imgui\cs1.6 Hook Imgui\MinHook_x86\lib;C:\Users\Administrator\Desktop\DOme\cs1.6 Hook Imgui\cs1.6 Hook Imgui\utils;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -132,7 +143,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpplatest</LanguageStandard>
-      <AdditionalIncludeDirectories>C:\Users\Administrator\Desktop\DOme\cs1.6 Hook Imgui\cs1.6 Hook Imgui\ImGui;C:\Users\Administrator\Desktop\DOme\cs1.6 Hook Imgui\cs1.6 Hook Imgui\MinHook_x86\include;C:\Users\Administrator\Desktop\DOme\cs1.6 Hook Imgui\cs1.6 Hook Imgui\MinHook_x86\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Administrator\Desktop\DOme\cs1.6 Hook Imgui\cs1.6 Hook Imgui\ImGui;C:\Users\Administrator\Desktop\DOme\cs1.6 Hook Imgui\cs1.6 Hook Imgui\MinHook_x86\include;C:\Users\Administrator\Desktop\DOme\cs1.6 Hook Imgui\cs1.6 Hook Imgui\MinHook_x86\lib;C:\Users\Administrator\Desktop\DOme\cs1.6 Hook Imgui\cs1.6 Hook Imgui\utils;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>

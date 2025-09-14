@@ -1,4 +1,4 @@
-#include <Windows.h>
+ï»¿#include <windows.h>
 #include <gl/GL.h>
 #include <stdint.h>
 #include "MinHook.h"
@@ -31,7 +31,7 @@ BOOL WINAPI hk_wglSwapBuffers(HDC hdc) {
     if (!g_inited) {
         g_hwnd = WindowFromDC(hdc);
 
-        // ³õÊ¼»¯ ImGui
+        // åˆå§‹åŒ– ImGui
         ImGui::CreateContext();
         ImGuiIO& io = ImGui::GetIO();
         io.Fonts->AddFontFromFileTTF("C:\\Windows\\Fonts\\msyh.ttc", 18.0f, nullptr, io.Fonts->GetGlyphRangesChineseFull());
@@ -47,8 +47,9 @@ BOOL WINAPI hk_wglSwapBuffers(HDC hdc) {
     ImGui_ImplWin32_NewFrame();
     ImGui::NewFrame();
 
-    handle_menu_toggle(); // ²Ëµ¥¿ª¹Ø
-    Misaki_Meniu();       // ²Ëµ¥»æÖÆ
+    handle_menu_toggle(); // å¤„ç†èœå•æ˜¾ç¤º/éšè—å’Œé¼ æ ‡æŒ‡é’ˆ
+    Misaki_Menu();       // èœå•ç»˜åˆ¶
+
 
     ImGui::Render();
     ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
@@ -57,19 +58,37 @@ BOOL WINAPI hk_wglSwapBuffers(HDC hdc) {
 }
 
 
-// ¿ØÖÆÌ¨Êä³ö
+// æ§åˆ¶å°è¾“å‡º
 void setup_console() {
     AllocConsole();
     FILE* file;
     freopen_s(&file, "CONOUT$", "w", stdout);
-    printf("[*] OpenGL Hook ³õÊ¼»¯Íê³É\n");
+
+    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+
+    // å½©è‰²è¾“å‡ºæ ‡é¢˜
+    SetConsoleTextAttribute(hConsole, FOREGROUND_GREEN | FOREGROUND_INTENSITY);
+    printf("  __  __ _ _       _        _ _ \n");
+    printf(" |  \\/  (_) | __ _| | _____| | |\n");
+    printf(" | |\\/| | | |/ _` | |/ / _ \\ | |\n");
+    printf(" | |  | | | | (_| |   <  __/ | |\n");
+    printf(" |_|  |_|_|_|\\__,_|_|\\_\\___|_|_|\n");
+
+    SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_BLUE | FOREGROUND_INTENSITY);
+    printf("       OpenGL Hook LinkStart \n");
+    printf("================================\n");
+
+    SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE);
+    printf("[*] Press DELETE to toggle menu\n");
+    printf("[*] Enjoy Misaki Menu!\n");
+    printf("================================\n");
 }
 
 DWORD WINAPI init_hooks(LPVOID lpParameter) {
     setup_console();
 
     // Hook wglSwapBuffers
-    HMODULE hOpenGL = GetModuleHandle(L"opengl32.dll");
+    HMODULE hOpenGL = GetModuleHandleW(L"opengl32.dll");
     if (hOpenGL) {
         void* target = GetProcAddress(hOpenGL, "wglSwapBuffers");
         if (target) {

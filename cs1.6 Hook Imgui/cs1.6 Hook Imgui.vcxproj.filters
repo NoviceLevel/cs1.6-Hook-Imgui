@@ -10,5 +10,56 @@
     <Filter Include="Gui">
       <UniqueIdentifier>{4c4a6ea4-f735-4cab-b257-ecb5dac54998}</UniqueIdentifier>
     </Filter>
+    <Filter Include="MinHook_x86\lib">
+      <UniqueIdentifier>{d9cf7162-3676-4ecf-a21f-e6c7a232046b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MinHook_x86\include">
+      <UniqueIdentifier>{dec5ce1d-fa5c-4848-bde5-42f8ef06babd}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ImGui\imconfig.h">
+      <Filter>ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGui\imgui.h">
+      <Filter>ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGui\imgui_internal.h">
+      <Filter>ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGui\imstb_rectpack.h">
+      <Filter>ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGui\imstb_textedit.h">
+      <Filter>ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGui\imstb_truetype.h">
+      <Filter>ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="MinHook_x86\include\MinHook.h">
+      <Filter>MinHook_x86\include</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ImGui\imgui.cpp">
+      <Filter>ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="ImGui\imgui_draw.cpp">
+      <Filter>ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="ImGui\imgui_tables.cpp">
+      <Filter>ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="ImGui\imgui_widgets.cpp">
+      <Filter>ImGui</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="MinHook_x86\lib\libMinHook.x86.lib">
+      <Filter>MinHook_x86\lib</Filter>
+    </Library>
+    <Library Include="MinHook_x86\lib\libMinHook.x64.lib">
+      <Filter>MinHook_x86\lib</Filter>
+    </Library>
   </ItemGroup>
 </Project>
